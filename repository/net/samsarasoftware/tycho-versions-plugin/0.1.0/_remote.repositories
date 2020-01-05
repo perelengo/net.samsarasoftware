@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Jul 13 13:29:21 CEST 2017
+tycho-versions-plugin-0.1.0-sources.jar>=
+tycho-versions-plugin-0.1.0.jar>=
+tycho-versions-plugin-0.1.0.jar>samsarasoftware=
+tycho-versions-plugin-0.1.0.pom>=
+tycho-versions-plugin-0.1.0.pom>samsarasoftware=

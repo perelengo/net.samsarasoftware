@@ -35,6 +35,10 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>local</id>
+			<url>file://${basedir}/repository/</url>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -47,6 +51,10 @@
 				<enabled>false</enabled>
 			</snapshots>
 			<url>http://maven3.samsara-software.es/repository</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>local</id>
+			<url>file://${basedir}/repository/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
