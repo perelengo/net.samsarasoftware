@@ -1,0 +1,1 @@
+mvn -o -Dlicense.aggregateMissingLicensesFile="%env.SAMSARASOFTWARE_WORKSPACE_DIR%\net.samsarasoftware\src\license\THIRD-PARTY.properties" license:aggregate-add-third-party
