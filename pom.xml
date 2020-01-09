@@ -66,6 +66,8 @@
 		<module>../tycho-versions-plugin</module>
 		<module>../org.eclipse.acceleo.module.samsarasoftware.sql.custom</module>
 		<module>../net.samsarasoftware.maqetta</module>
+		<module>../net.samsarasoftware.jdbc2uml</module>
+		<module>../net.samsarasoftware.maven2uml</module>
 	</modules>
 
 	<build>
