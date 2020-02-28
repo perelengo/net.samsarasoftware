@@ -136,7 +136,20 @@
 					<checkModificationExcludes>**/THIRD-PARTY.properties</checkModificationExcludes>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>net.samsarasoftware</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>0.1.0</version>
+				<executions>
+					<execution>
+						<id>versions</id>
+						<phase>pre-clean</phase>
+						<goals>
+							<goal>synchronize-version</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
 		<extensions>
