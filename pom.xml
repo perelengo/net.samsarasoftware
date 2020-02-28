@@ -19,7 +19,7 @@
 	<repositories>
 		<repository>
 			<id>repo1</id>
-			<url>http://repo1.maven.org/maven2/</url>
+			<url>https://repo1.maven.org/maven2/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -39,9 +39,9 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-			<url>http://maven3.samsara-software.es/repository</url>
+			<url>https://maven3.samsara-software.es/repository</url>
 		</pluginRepository>
-		
+
 		<pluginRepository>
 			<id>acceleo-releases</id>
 			<url>https://repo.eclipse.org/content/repositories/acceleo-releases/</url>
@@ -67,6 +67,7 @@
 		<module>../org.eclipse.acceleo.module.samsarasoftware.sql.custom</module>
 		<module>../net.samsarasoftware.maqetta</module>
 		<module>../net.samsarasoftware.jdbc2uml</module>
+		<module>../net.samsarasoftware.jdbc2uml.plugin</module>
 		<module>../net.samsarasoftware.maven2uml</module>
 	</modules>
 
@@ -135,28 +136,7 @@
 					<checkModificationExcludes>**/THIRD-PARTY.properties</checkModificationExcludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>license-maven-plugin</artifactId>
-				<version>1.12</version>
-				<executions>
-					<execution>
-						<id>add-third-party</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>add-third-party</goal>
-						</goals>
-						<configuration>
-							<useMissingFile>true</useMissingFile>
-							<useRepositoryMissingFiles>false</useRepositoryMissingFiles>
-							<aggregateMissingLicensesFile>${basedir}/src/license/THIRD-PARTY.properties</aggregateMissingLicensesFile>
-							<force>true</force>
-							<verbose>false</verbose>
-							<outputDirectory>${project.build.outputDirectory}/</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+
 
 		</plugins>
 		<extensions>
@@ -169,6 +149,41 @@
 		</extensions>
 
 	</build>
+
+	<profiles>
+		<profile>
+			<id>refresh-licenses</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>license-maven-plugin</artifactId>
+						<version>1.12</version>
+						<executions>
+							<execution>
+								<id>add-third-party</id>
+								<phase>compile</phase>
+								<goals>
+									<goal>add-third-party</goal>
+								</goals>
+								<configuration>
+									<useMissingFile>true</useMissingFile>
+									<useRepositoryMissingFiles>false</useRepositoryMissingFiles>
+									<aggregateMissingLicensesFile>${basedir}/src/license/THIRD-PARTY.properties</aggregateMissingLicensesFile>
+									<force>true</force>
+									<verbose>false</verbose>
+									<outputDirectory>${project.build.outputDirectory}/</outputDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<scm>
 		<developerConnection>scm:git:git://github.com/perelengo/net.samsarasoftware.git</developerConnection>
