@@ -1,7 +1,11 @@
-rem mvn -P publish clean install
 rem mvn -o  clean release:clean
-rem mvn -P publish clean install
+rem mvn -P publish -P refresh-licenses clean install
+
+rem ejecutar hasta que no de errores
+rem habrá que hacer algunos cambios en los ficheros feature.xml hasta que no se corrijan
 rem mvn -P publish release:prepare
+
+rem mvn -P publish clean install
 rem release:perform
 rem cd target\checkout
 rem mvn -P publish clean install deploy
